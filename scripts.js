@@ -8,7 +8,13 @@ function init () {
     landing = document.getElementById("landing");
     missionAbort = document.getElementById("missionAbort");
     spaceShuttleHeight = document.getElementById("spaceShuttleHeight");
+    up = document.getElementById("up");
+    down = document.getElementById("down");
+    left = document.getElementById("left");
+    right = document.getElementById("right");
     rocket = document.getElementById("rocket");
+    rocket.style.position = "relative";
+    
    
    
     takeoff.addEventListener("click",function(){
@@ -39,6 +45,24 @@ missionAbort.addEventListener("click", function(){
     }
 });
 up.addEventListener("click",function(){
+    let rocketPosition = Number(rocket.style.top.slice(0,length-2));
+    rocket.style.top = rocketPosition - 10 + "px"
+   ;
+});
+
+down.addEventListener("click",function(){
+    let rocketPosition = Number(rocket.style.top.slice(0,length-2));
+    rocket.style.top = rocketPosition + 10 + "px"
+   ;
+});
+left.addEventListener("click",function(){
+    let rocketPosition = Number(rocket.style.left.slice(0,length-2));
+    rocket.style.left = rocketPosition - 10 + "px"
+   ;
+});
+right.addEventListener("click",function(){
+    let rocketPosition = Number(rocket.style.left.slice(0,length-2));
+    rocket.style.left = rocketPosition + 10 + "px"
    ;
 })
 }
